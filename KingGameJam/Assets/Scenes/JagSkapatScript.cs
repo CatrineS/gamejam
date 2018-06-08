@@ -13,4 +13,9 @@ public class JagSkapatScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    //Wow Ny text i scriptet Waa!!!
+
+
+    //Waaa!! :D:D:D!!!
 }
