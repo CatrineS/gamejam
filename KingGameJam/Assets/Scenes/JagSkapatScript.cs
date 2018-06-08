@@ -6,15 +6,13 @@ public class JagSkapatScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		//Och dettaaa!!!
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//Jag skrrivit detta nuuu!!! :D:D:D:D
 	}
-
-    //Wow Ny text i scriptet Waa!!!
 
 
     //Waaa!! :D:D:D!!!
