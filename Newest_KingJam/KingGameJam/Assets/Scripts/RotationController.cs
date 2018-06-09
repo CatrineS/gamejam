@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RotationController : MonoBehaviour
 {
-
     float rotationSpeed = 5f;
 
     private void OnMouseDrag()
@@ -14,20 +13,30 @@ public class RotationController : MonoBehaviour
 
         if (gameObject.tag == "Cube")
         {
-            rotationSpeed = 8f;
-            transform.RotateAround(Vector3.forward, -rotX);
+            RotateObject(Vector3.forward, 8f, -rotX, 0);
         }
         else if (gameObject.tag == "Hexagon")
         {
-            rotationSpeed = 3f;
-            transform.RotateAround(Vector3.right, rotY);
+            RotateObject(Vector3.right, 3f, rotY, 0);
         }
         else if (gameObject.tag == "Star")
         {
-            rotationSpeed = 10f;
-            transform.RotateAround(Vector3.up, -rotX);
-            transform.RotateAround(Vector3.up, -rotY);
+            RotateObject(Vector3.up, 10f, -rotX, -rotY);
+        }       
+    }
+
+
+    public void RotateObject(Vector3 direction, float speed, float axisOne, float axisTwo)
+    {
+        rotationSpeed = speed;
+        if(axisTwo != 0)
+        {      
+            transform.RotateAround(direction, axisOne);
+            transform.RotateAround(direction, axisTwo);
         }
-        
+        else
+        {
+            transform.RotateAround(direction, axisOne);
+        }
     }
 }
