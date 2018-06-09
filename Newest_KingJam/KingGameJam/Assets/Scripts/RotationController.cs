@@ -22,7 +22,7 @@ public class RotationController : MonoBehaviour
         }
         else if (gameObject.tag == "Star")
         {
-            transform.RotateAround(Vector3.up, rotY);
+            transform.RotateAround(Vector3.up, -rotY);
         }
         
     }
