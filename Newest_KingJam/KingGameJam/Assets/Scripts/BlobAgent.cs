@@ -65,6 +65,7 @@ public class BlobAgent : MonoBehaviour {
         if(other.tag == "DeathZone")
         {
             RemoveFromList();
+            gameObject.SetActive(false);
         }
     }
 

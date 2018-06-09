@@ -20,7 +20,10 @@ public class CameraFollow : MonoBehaviour {
     }
 
     void LateUpdate () {
-        Move();
+        if(blobs.Count > 0)
+        {
+            Move();
+        }
 	}
 
     private void Move()
@@ -33,11 +36,6 @@ public class CameraFollow : MonoBehaviour {
 
     Vector3 GetCenterPoint()
     {
-        if(blobs.Count == 1)
-        {
-            return blobs[0].position;
-        }
-
         Bounds bounds = new Bounds(blobs[0].position, Vector3.zero);
 
         for(int i = 0; i < blobs.Count; i++)
@@ -51,7 +49,7 @@ public class CameraFollow : MonoBehaviour {
 
     public void RemoveFromList(Transform blob)
     {
-        if(blobs.Count <= 1)
+        if(blobs.Count < 1)
         {
             return;
         }
