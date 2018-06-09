@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.70820886, g: 0.754717, b: 0.45923817, a: 1}
+  m_AmbientSkyColor: {r: 0.2956954, g: 0.3301887, b: 0.095007114, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -6708,7 +6708,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.03
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -10485,7 +10485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d3ef1a5bbfb4e0a910fbbe5830b1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterMode: 0
+  waterMode: 1
   disablePixelLights: 1
   textureSize: 256
   clipPlaneOffset: 0.07
@@ -11034,7 +11034,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.52
+  m_Intensity: 0.47
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -11066,13 +11066,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2133745044}
-  m_LocalRotation: {x: -0.8043639, y: 0.57072383, z: -0.13468647, w: -0.09556461}
-  m_LocalPosition: {x: -62.133904, y: 428.357, z: 673.9049}
+  m_LocalRotation: {x: -0.8087469, y: 0.56555915, z: -0.13101354, w: -0.0943758}
+  m_LocalPosition: {x: -68.05, y: 445.25, z: 725.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 675238249}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.907001, y: -186.49199, z: 249.69}
+  m_LocalEulerAnglesHint: {x: 17.508001, y: -186.331, z: 248.95499}
 --- !u!1001 &2135655021
 Prefab:
   m_ObjectHideFlags: 0
