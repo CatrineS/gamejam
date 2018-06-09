@@ -21,7 +21,7 @@ public class RotationController : MonoBehaviour
         }
         else if (gameObject.tag == "Star")
         {
-            RotateObject(Vector3.up, 10f, -rotX, -rotY);
+            RotateObject(Vector3.up, 5f, -rotX, -rotY);
         }       
     }
 
