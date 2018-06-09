@@ -4,16 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
-
+    [SerializeField] private Transform BlobParent;
     [SerializeField] private List<Transform> blobs;
     [SerializeField] private Vector3 offset;
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private float smoothTime = 0.3f;
 
+
+    private void Awake()
+    {
+        foreach(Transform child in BlobParent)
+        {
+            blobs.Add(child);
+        }
+    }
+
     void LateUpdate () {
         Move();
-
-        print("BlobsCount: " + blobs.Count);
 	}
 
     private void Move()
@@ -35,10 +42,10 @@ public class CameraFollow : MonoBehaviour {
 
         for(int i = 0; i < blobs.Count; i++)
         {
-            bounds.Encapsulate(blobs[i].position);
+            bounds.Encapsulate(blobs[i].localPosition);
         }
 
-        return bounds.center;
+        return new Vector3(transform.position.x, transform.position.y, bounds.center.z);
     }
 
 
