@@ -18,18 +18,18 @@ public class BlobAgent : MonoBehaviour {
     }
 	
 	void Update () {
-
-
         if (Input.GetMouseButtonDown(0))
         {
+            blobAgent.SetDestination(positions[0].position);
 
-            print("wow");
+            return;
             if (currentIndex > positions.Length)
                 return;
-
-
-            blobAgent.SetDestination(positions[currentIndex].position);
-            currentIndex++;
+            else
+            {
+                blobAgent.SetDestination(positions[0].position);
+                currentIndex++;
+            }
         }
 	}
 }
