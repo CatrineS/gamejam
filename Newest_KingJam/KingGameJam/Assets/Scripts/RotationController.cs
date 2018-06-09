@@ -18,7 +18,7 @@ public class RotationController : MonoBehaviour
         }
         else if (gameObject.tag == "Hexagon")
         {
-
+            transform.RotateAround(Vector3.right, rotY);
         }
         else if (gameObject.tag == "Star")
         {

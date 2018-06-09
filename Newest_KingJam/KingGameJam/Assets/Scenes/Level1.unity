@@ -1873,6 +1873,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d85d60a983565ce4d9e974c796444fdc, type: 2}
+    - target: {fileID: 100000, guid: 522ad1a6f3e13284491dd23f25944a9c, type: 3}
+      propertyPath: m_TagString
+      value: Cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 522ad1a6f3e13284491dd23f25944a9c, type: 3}
   m_IsPrefabParent: 0
@@ -1960,6 +1964,10 @@ Prefab:
     - target: {fileID: 100000, guid: 27d988462a3d19d48a952a27b01a07af, type: 3}
       propertyPath: m_Name
       value: 07_Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 27d988462a3d19d48a952a27b01a07af, type: 3}
+      propertyPath: m_TagString
+      value: Star
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27d988462a3d19d48a952a27b01a07af, type: 3}
@@ -2206,6 +2214,10 @@ Prefab:
     - target: {fileID: 100000, guid: 27d988462a3d19d48a952a27b01a07af, type: 3}
       propertyPath: m_Name
       value: 07_Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 27d988462a3d19d48a952a27b01a07af, type: 3}
+      propertyPath: m_TagString
+      value: Star
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27d988462a3d19d48a952a27b01a07af, type: 3}
@@ -2704,6 +2716,10 @@ Prefab:
     - target: {fileID: 100000, guid: 522ad1a6f3e13284491dd23f25944a9c, type: 3}
       propertyPath: m_Name
       value: 06_Octagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 522ad1a6f3e13284491dd23f25944a9c, type: 3}
+      propertyPath: m_TagString
+      value: Hexagon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 522ad1a6f3e13284491dd23f25944a9c, type: 3}
