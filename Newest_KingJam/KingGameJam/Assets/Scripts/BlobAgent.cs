@@ -21,15 +21,6 @@ public class BlobAgent : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             blobAgent.SetDestination(positions[0].position);
-
-            return;
-            if (currentIndex > positions.Length)
-                return;
-            else
-            {
-                blobAgent.SetDestination(positions[0].position);
-                currentIndex++;
-            }
         }
 	}
 }
