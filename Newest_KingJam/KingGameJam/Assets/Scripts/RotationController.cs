@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotationController : MonoBehaviour
 {
 
-    float rotationSpeed = 8;
+    float rotationSpeed = 5f;
 
     private void OnMouseDrag()
     {
@@ -14,14 +14,18 @@ public class RotationController : MonoBehaviour
 
         if (gameObject.tag == "Cube")
         {
+            rotationSpeed = 8f;
             transform.RotateAround(Vector3.forward, -rotX);
         }
         else if (gameObject.tag == "Hexagon")
         {
+            rotationSpeed = 3f;
             transform.RotateAround(Vector3.right, rotY);
         }
         else if (gameObject.tag == "Star")
         {
+            rotationSpeed = 10f;
+            transform.RotateAround(Vector3.up, -rotX);
             transform.RotateAround(Vector3.up, -rotY);
         }
         

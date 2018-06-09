@@ -7,6 +7,9 @@ TagManager:
   - Cube
   - Star
   - Hexagon
+  - JumpingPad
+  - PositionTrigger
+  - DeathZone
   layers:
   - Default
   - TransparentFX
