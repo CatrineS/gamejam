@@ -12,7 +12,18 @@ public class RotationController : MonoBehaviour
         float rotX = Input.GetAxis("Mouse X") * rotationSpeed * Mathf.Deg2Rad;
         float rotY = Input.GetAxis("Mouse Y") * rotationSpeed * Mathf.Deg2Rad;
 
-        //transform.RotateAround(Vector3.up, -rotX);
-        transform.RotateAround(Vector3.forward, -rotX);
+        if (gameObject.tag == "Cube")
+        {
+            transform.RotateAround(Vector3.forward, -rotX);
+        }
+        else if (gameObject.tag == "Hexagon")
+        {
+            transform.RotateAround(Vector3.right, rotY);
+        }
+        else if (gameObject.tag == "Star")
+        {
+            transform.RotateAround(Vector3.up, -rotY);
+        }
+        
     }
 }
