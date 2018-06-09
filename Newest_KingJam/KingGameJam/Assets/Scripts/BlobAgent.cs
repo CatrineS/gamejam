@@ -7,6 +7,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody))]
 public class BlobAgent : MonoBehaviour {
 
+
+
     [SerializeField] private Transform[] positions;
     [SerializeField] private Vector3 jumpDirection = new Vector3(0, 1f, 0);
     [SerializeField] private float jumpForce = 5f;
