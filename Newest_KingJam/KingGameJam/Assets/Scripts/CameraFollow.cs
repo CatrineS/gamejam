@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
+
     [SerializeField] private Transform BlobParent;
     [SerializeField] private List<Transform> blobs;
     [SerializeField] private Vector3 offset;
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private float smoothTime = 0.3f;
-
 
     private void Awake()
     {
