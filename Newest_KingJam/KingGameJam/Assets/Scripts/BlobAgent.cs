@@ -5,22 +5,11 @@ using UnityEngine.AI;
 
 public class BlobAgent : MonoBehaviour {
 
-    NavMeshAgent blobAgent;
-
-
     [SerializeField] private Transform[] positions;
-    private int currentIndex = 0;
 
 
-    private void Awake()
-    {
-        blobAgent = GetComponent<NavMeshAgent>();
+    void Update() {
+        transform.LookAt(positions[0].position);
+        transform.Translate(Vector3.forward * 5f * Time.deltaTime);
     }
-	
-	void Update () {
-        if (Input.GetMouseButtonDown(0))
-        {
-            blobAgent.SetDestination(positions[0].position);
-        }
-	}
 }
