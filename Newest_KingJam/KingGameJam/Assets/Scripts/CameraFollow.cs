@@ -6,10 +6,17 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
     [SerializeField] private Transform BlobParent;
+    [SerializeField] private Transform ZoomedInTransform;
+    [SerializeField] private Transform ZoomedOutTransform;
+
     [SerializeField] private List<Transform> blobs;
     [SerializeField] private Vector3 offset;
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private float smoothTime = 0.3f;
+
+    private float camZoomInY = -2f, camRotationX = 15f;
+    private bool zoomingIn = false;
+    private bool zoomingOut = false;
 
     private void Awake()
     {
@@ -23,6 +30,7 @@ public class CameraFollow : MonoBehaviour {
         if(blobs.Count > 0)
         {
             Move();
+            Zoom();
         }
 	}
 
@@ -32,6 +40,42 @@ public class CameraFollow : MonoBehaviour {
         Vector3 newPosition = centerPoint + offset;
 
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+    }
+
+    private void Zoom()
+    {
+
+
+        float shouldZoom = GreatestDistance();
+
+        if(shouldZoom < 10 && !zoomingIn)
+        {
+
+
+
+        }
+     
+        if (zoomingIn)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0, camZoomInY, 0), 1f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(-15f, 0, 0)), 1f);
+        }
+        else if (zoomingOut)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0, -camZoomInY, 0), 1f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(15f, 0, 0)), 1f);
+        }
+    }
+
+    private float GreatestDistance()
+    {
+        Bounds bounds = new Bounds(blobs[0].position, Vector3.zero);
+
+        for (int i = 0; i < blobs.Count; i++)
+        {
+            bounds.Encapsulate(blobs[i].localPosition);
+        }
+        return bounds.size.z;
     }
 
     Vector3 GetCenterPoint()

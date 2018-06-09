@@ -998,6 +998,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62d3e1f2909e63e41ad70650565393f7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &151518787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 151518788}
+  m_Layer: 0
+  m_Name: ZoomerIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &151518788
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151518787}
+  m_LocalRotation: {x: 0.20927721, y: 0, z: 0, w: 0.9778564}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1748561363}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 24.16, y: 0, z: 0}
 --- !u!1 &154005267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3192,6 +3220,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4073414612352344, guid: 62d3e1f2909e63e41ad70650565393f7,
     type: 2}
   m_PrefabInternal: {fileID: 2137292150}
+--- !u!1 &554288216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 554288217}
+  m_Layer: 0
+  m_Name: ZoomedOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554288217
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554288216}
+  m_LocalRotation: {x: 0.12913992, y: 0, z: -0, w: 0.9916264}
+  m_LocalPosition: {x: 0.029999971, y: 1.4649589, z: -0.35027623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1748561363}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 39, y: 0, z: 0}
 --- !u!1 &554713888 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 22a41ec8ca869ca4ebee7c49e024b57c, type: 3}
@@ -11204,6 +11260,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1917939351}
+  - {fileID: 554288217}
+  - {fileID: 151518788}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 24.160002, y: 0, z: 0}
