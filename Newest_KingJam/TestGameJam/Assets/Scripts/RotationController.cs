@@ -31,7 +31,8 @@ public class RotationController : MonoBehaviour
         else if (type == ObjectType.Star)
         {
             RotateObject(Vector3.up, 5f, -mouseXInput, -mouseYInput);
-        }       
+        }
+       
     }
 
     public void RotateObject(Vector3 direction, float speed, float axisOne, float axisTwo)
