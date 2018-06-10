@@ -14,6 +14,7 @@ public class BlobAgent : MonoBehaviour {
     [SerializeField] private float moveSpeed = 3f;
     private int positionIndex = 0;
     private Rigidbody rb;
+    public Animator anim; 
 
 
     public enum BlobState { Alive, Dead, InGoal }
@@ -23,6 +24,11 @@ public class BlobAgent : MonoBehaviour {
     public delegate void BlobDelegate(BlobAgent agentScript);
     public BlobDelegate blobSaved;
     public BlobDelegate blobDied;
+
+    void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
 
     private void Awake()
     {
@@ -35,11 +41,19 @@ public class BlobAgent : MonoBehaviour {
         transform.LookAt(positions[positionIndex].position);
         rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
   
-        if (jumping)
+        if (jumping || moveSpeed > 3)
         {
             jumping = false;
             rb.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
+            anim.Play("Idle");
         }
+
+        if (moveSpeed <= 3f)
+        {
+            anim.Play("Walking");
+        }
+
+
     }
 
     private void JumpTrigger()

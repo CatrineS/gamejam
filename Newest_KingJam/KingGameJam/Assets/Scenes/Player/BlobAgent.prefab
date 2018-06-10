@@ -1696,7 +1696,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870681153233188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.47, y: 14.899999, z: 40.721}
+  m_LocalPosition: {x: -0.02, y: 14.899999, z: 42.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4340843863520666}
@@ -2739,6 +2739,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &136186780224003130
 CapsuleCollider:
@@ -2749,10 +2750,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.48
+  m_Height: 1.34
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!137 &137391945224993528
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
