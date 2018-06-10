@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Restarter))]
 public class CameraFollow : MonoBehaviour {
 
     [SerializeField] private Transform BlobParent;
@@ -14,7 +15,8 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private float smoothTime = 0.3f;
 
-    private float camZoomInY = -2f, camRotationX = 15f;
+
+private float camZoomInY = -2f, camRotationX = 15f;
     private bool zoomingIn = false;
     private bool zoomingOut = false;
 
@@ -27,7 +29,10 @@ public class CameraFollow : MonoBehaviour {
         {
             blobs.Add(child);
         }
+
+        GetComponent<Restarter>().SetBlobList(blobs);
     }
+
 
     void LateUpdate () {
         if(blobs.Count > 0)
@@ -47,10 +52,7 @@ public class CameraFollow : MonoBehaviour {
 
     private void Zoom()
     {
-
-
         float shouldZoom = GreatestDistance();
-
         if(shouldZoom < 10 && !zoomingIn)
         {
 
@@ -98,6 +100,8 @@ public class CameraFollow : MonoBehaviour {
     {
         if(blobs.Count < 1)
         {
+            blobs.Clear();
+            scoreSystem.UpdateScore();
             return;
         }
         else if(blobs.Contains(blob))
@@ -106,6 +110,8 @@ public class CameraFollow : MonoBehaviour {
             scoreSystem.UpdateScore();
         }
     }
+
+
     public int BlobsSize()
     {
         return blobs.Count;

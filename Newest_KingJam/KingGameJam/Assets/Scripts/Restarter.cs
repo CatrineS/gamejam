@@ -8,36 +8,91 @@ public class Restarter : MonoBehaviour {
     public Text losingText;
     public Button playAgainButton;
     private List<Transform> allBlobs;
-    // Update is called once per frame
-    void Update() {
 
+    [SerializeField] private int blobSavedCounter = 0;
+    [SerializeField] private int blobDiedCounter = 0;
+    [SerializeField] private int totalBlobCounter = 0;
+  
+    private void CheckGameOver()
+    {
+        if((blobSavedCounter + blobDiedCounter) == totalBlobCounter)
+        {
+            if(blobSavedCounter > 0)
+            {
+                WonGame();
+            }
+            else if(blobSavedCounter == 0)
+            {
+                LostGame();
+            }
+        }
     }
 
-    public void lostGame() {
+    public void LostGame() {
 
         playAgainButton.gameObject.SetActive(true);
         losingText.gameObject.SetActive(true);
     }
-    public void wonGame()
+    public void WonGame()
     {
         playAgainButton.gameObject.SetActive(true);
+        winningText.text = blobSavedCounter + " survived!";
         winningText.gameObject.SetActive(true);
     }
-    public void saveTheBlobs(List<Transform> blobs)
+
+ 
+    public void SetBlobList(List<Transform> blobs)
     {
         allBlobs = blobs;
+
+        foreach(Transform blob in allBlobs)
+        {
+            BlobAgent blobAgent = blob.GetComponent<BlobAgent>();
+            blobAgent.blobSaved += BlobSaved;
+            blobAgent.blobDied += BlobDied;         
+        }
+
+        totalBlobCounter = allBlobs.Count;
     }
-    private int CalculateBlobs()
+
+    private bool CalculateBlobsAlive()
+    {
+        foreach(Transform blob in allBlobs)
+        {
+            if(blob.GetComponent<BlobAgent>().state == BlobAgent.BlobState.Alive)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private int CalculateSavedBlobs()
     {
         int counter = 0;
 
         foreach (Transform blob in allBlobs)
         {
-            if (blob.GetComponent<BlobAgent>().inGoal)
+            if (blob.GetComponent<BlobAgent>().state == BlobAgent.BlobState.InGoal)
             {
                 counter++;
             }
         }
         return counter;
+    }
+
+
+    public void BlobSaved(BlobAgent blobAgent)
+    {
+        blobSavedCounter++;
+        blobAgent.state = BlobAgent.BlobState.InGoal;
+        CheckGameOver();
+    }
+
+    public void BlobDied(BlobAgent blobAgent)
+    {
+        blobDiedCounter++;
+        blobAgent.state = BlobAgent.BlobState.Dead;
+        CheckGameOver();
     }
 }

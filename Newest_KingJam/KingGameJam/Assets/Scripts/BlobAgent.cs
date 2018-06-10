@@ -7,8 +7,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody))]
 public class BlobAgent : MonoBehaviour {
 
-
-
     [SerializeField] private Transform[] positions;
     [SerializeField] private Vector3 jumpDirection = new Vector3(0, 1f, 0);
     [SerializeField] private float jumpForce = 5f;
@@ -16,11 +14,20 @@ public class BlobAgent : MonoBehaviour {
     [SerializeField] private float moveSpeed = 3f;
     private int positionIndex = 0;
     private Rigidbody rb;
-    public bool inGoal = false;
+
+
+    public enum BlobState { Alive, Dead, InGoal }
+    public BlobState state;
+
+
+    public delegate void BlobDelegate(BlobAgent agentScript);
+    public BlobDelegate blobSaved;
+    public BlobDelegate blobDied;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        state = BlobState.Alive;
     }
 
     void Update() {
@@ -65,14 +72,26 @@ public class BlobAgent : MonoBehaviour {
 
         if (other.tag == "DeathZone")
         {
+            state = BlobState.Dead;
             RemoveFromList();
             gameObject.SetActive(false);
+
+            if(blobDied != null)
+                blobDied(this);
+
         }
         if (other.tag == "WinningTrigger"){
-            inGoal = true;
-            rb.isKinematic = true;
-          
+            state = BlobState.InGoal;
+            Invoke("DisableRigidBody", UnityEngine.Random.Range(0.4f, 1f));      
+            if (blobSaved != null)
+                blobSaved(this);
         }
+    }
+
+
+    private void DisableRigidBody()
+    {
+        rb.isKinematic = true;
     }
 
 
