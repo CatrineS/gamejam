@@ -5,20 +5,23 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
-public class BlobAgent : MonoBehaviour {
+public class BlobAgent : MonoBehaviour
+{
 
     [SerializeField] private Transform[] positions;
     [SerializeField] private Vector3 jumpDirection = new Vector3(0, 1f, 0);
     [SerializeField] private float jumpForce = 3.5f;
     [SerializeField] private bool jumping = false;
     [SerializeField] private float moveSpeed = 3f;
-    private int positionIndex = 0;
+    [SerializeField] private int positionIndex = 0;
     private Rigidbody rb;
     private Animator anim;
     private AudioSource source;
     public AudioClip running;
 
 
+
+    public Transform currentDestination;
     public enum BlobState { Alive, Dead, InGoal }
     public BlobState state;
 
@@ -37,17 +40,18 @@ public class BlobAgent : MonoBehaviour {
     {
         anim = GetComponentInChildren<Animator>();
         source = GetComponent<AudioSource>();
-        source.clip = running; 
-
-        
+        source.clip = running;
     }
 
 
 
-    void Update() {
+    void Update()
+    {
 
-        rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
+        currentDestination = positions[positionIndex];
         transform.LookAt(positions[positionIndex].position);
+        rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
+
 
         if (jumping || moveSpeed > 3)
         {
@@ -69,7 +73,6 @@ public class BlobAgent : MonoBehaviour {
         jumping = true;
     }
 
-
     private void TriggerNextPosition()
     {
         positionIndex++;
@@ -89,7 +92,8 @@ public class BlobAgent : MonoBehaviour {
 
         if (other.tag == "PositionTrigger")
         {
-            TriggerNextPosition();
+            //TriggerNextPosition();
+            positionIndex++;
         }
 
         if (other.tag == "DeathZone")
@@ -98,13 +102,14 @@ public class BlobAgent : MonoBehaviour {
             RemoveFromList();
             gameObject.SetActive(false);
 
-            if(blobDied != null)
+            if (blobDied != null)
                 blobDied(this);
 
         }
-        if (other.tag == "WinningTrigger"){
+        if (other.tag == "WinningTrigger")
+        {
             state = BlobState.InGoal;
-            Invoke("DisableRigidBody", UnityEngine.Random.Range(0.4f, 1f));      
+            Invoke("DisableRigidBody", UnityEngine.Random.Range(0.4f, 1f));
             if (blobSaved != null)
                 blobSaved(this);
         }
@@ -118,5 +123,5 @@ public class BlobAgent : MonoBehaviour {
 
 
 }
-  //transform.position = Vector3.MoveTowards(transform.position, positions[0].position, 2f * Time.deltaTime);
-  //  transform.Translate(Vector3.forward * 5f * Time.deltaTime);
+//transform.position = Vector3.MoveTowards(transform.position, positions[0].position, 2f * Time.deltaTime);
+//  transform.Translate(Vector3.forward * 5f * Time.deltaTime);
