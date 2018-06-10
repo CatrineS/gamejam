@@ -243,6 +243,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &5015018
 CapsuleCollider:
@@ -363,6 +364,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &12414932
 Rigidbody:
@@ -2892,6 +2894,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &294037761
 Rigidbody:
@@ -3058,6 +3061,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &300803271
 Rigidbody:
@@ -3183,6 +3187,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &311659645
 Rigidbody:
@@ -3321,6 +3326,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &315451688
 CapsuleCollider:
@@ -3966,6 +3972,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &377188638
 CapsuleCollider:
@@ -4514,6 +4521,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &435129954
 CapsuleCollider:
@@ -6827,6 +6835,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &721642696
 Rigidbody:
@@ -7095,6 +7104,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &745513250
 CapsuleCollider:
@@ -8709,6 +8719,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &960858454
 CapsuleCollider:
@@ -8819,6 +8830,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &965296314
 Rigidbody:
@@ -13203,6 +13215,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &1375325562
 Rigidbody:
@@ -14584,6 +14597,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &1556585974
 Rigidbody:
@@ -14848,6 +14862,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &1600887400
 Rigidbody:
@@ -17107,6 +17122,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &1837751032
 Rigidbody:
@@ -17307,6 +17323,7 @@ MonoBehaviour:
   jumpForce: 5
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!136 &1839582487
 CapsuleCollider:
@@ -17475,6 +17492,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &1859231509
 Rigidbody:
@@ -18217,6 +18235,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &1929553083
 Rigidbody:
@@ -19175,6 +19194,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &2039471660
 Rigidbody:
@@ -19392,6 +19412,7 @@ MonoBehaviour:
   jumpForce: 10
   jumping: 0
   moveSpeed: 3
+  anim: {fileID: 0}
   state: 0
 --- !u!54 &2051949527
 Rigidbody:
