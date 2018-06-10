@@ -1,16 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Text scoreText;
+    private int score;
+
+    // Use this for initialization
+    void Start()
+    {
+        score = GetComponent<CameraFollow>().BlobsSize();
+        DisplayScore();
+    }
+
+
+    public void UpdateScore()
+    {
+        score--;
+        DisplayScore();
+    }
+
+    void DisplayScore()
+    {
+        scoreText.text = "" + score;
+    }
+
+
 }
