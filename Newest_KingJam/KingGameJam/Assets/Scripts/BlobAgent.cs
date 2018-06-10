@@ -16,6 +16,7 @@ public class BlobAgent : MonoBehaviour {
     [SerializeField] private float moveSpeed = 3f;
     private int positionIndex = 0;
     private Rigidbody rb;
+    public bool inGoal = false;
 
     private void Awake()
     {
@@ -68,7 +69,9 @@ public class BlobAgent : MonoBehaviour {
             gameObject.SetActive(false);
         }
         if (other.tag == "WinningTrigger"){
+            inGoal = true;
             rb.isKinematic = true;
+          
         }
     }
 
