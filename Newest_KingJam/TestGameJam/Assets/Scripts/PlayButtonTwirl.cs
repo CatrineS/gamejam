@@ -14,7 +14,7 @@ public class PlayButtonTwirl : MonoBehaviour
 
         if (gameObject.tag == "playButton")
         {
-            transform.RotateAround(Vector3.forward, mouseYInput);
+            //transform.RotateAround(Vector3.forward, mouseYInput);
             transform.RotateAround(Vector3.forward, mouseXInput);
             Invoke("StartScene", 1.5f);
         }
