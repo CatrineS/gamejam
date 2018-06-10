@@ -34,8 +34,8 @@ public class SceneChange : MonoBehaviour {
     {
         if (WonGame)
         {
-            
-            //Text som kommer upp
+            WonGame = false;
+            changeScene(3);
         }
 
         changeScene(0);
