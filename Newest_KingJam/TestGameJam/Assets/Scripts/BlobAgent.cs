@@ -52,6 +52,8 @@ public class BlobAgent : MonoBehaviour
         transform.LookAt(positions[positionIndex].position);
         rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
 
+        
+
 
         if (jumping || moveSpeed > 3)
         {
