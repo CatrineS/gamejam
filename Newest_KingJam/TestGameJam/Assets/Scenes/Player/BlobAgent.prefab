@@ -2849,9 +2849,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49203f244b15a5940afc4799e81ec9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionParent: {fileID: 0}
   positionTransforms: []
+  positionParent: {fileID: 0}
   currentDestination: {fileID: 0}
+  triggerDistance: 10
 --- !u!136 &136186780224003130
 CapsuleCollider:
   m_ObjectHideFlags: 1
