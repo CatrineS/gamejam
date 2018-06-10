@@ -7,6 +7,7 @@ public class Restarter : MonoBehaviour {
     public Text winningText;
     public Text losingText;
     public Button playAgainButton;
+    public Button quitButton;
     private List<Transform> allBlobs;
 
     private bool gameIsOver = false;
@@ -36,18 +37,20 @@ public class Restarter : MonoBehaviour {
     {
         playAgainButton.gameObject.SetActive(true);
         losingText.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
         gameIsOver = true;
     }
 
     public void WonGame()
     {
-        winningText.text = blobSavedCounter + " survived!";
+        winningText.text = blobSavedCounter + " blobs survived!";
         winningText.gameObject.SetActive(true);
         playAgainButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
+        SceneChange.instance.WonGame = true;
         gameIsOver = true;
     }
 
- 
     public void SetBlobList(List<Transform> blobs)
     {
         allBlobs = blobs;

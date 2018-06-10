@@ -5,6 +5,8 @@ public class SceneChange : MonoBehaviour {
 
     public static SceneChange instance = null;
 
+    public bool WonGame = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -27,5 +29,15 @@ public class SceneChange : MonoBehaviour {
         int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;
         changeScene(currentSceneNumber);
     }
-	
+
+    public void ClickedQuit()
+    {
+        if (WonGame)
+        {
+            
+            //Text som kommer upp
+        }
+
+        changeScene(0);
+    }	
 }

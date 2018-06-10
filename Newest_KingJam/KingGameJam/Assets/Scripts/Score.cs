@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     public Text scoreText;
-    public Restarter restartGame;
+    private Restarter restartGame;
     private int blobsAlive;
 
 
