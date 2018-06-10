@@ -43,7 +43,7 @@ public class Restarter : MonoBehaviour {
 
     public void WonGame()
     {
-        winningText.text = blobSavedCounter + " blobs survived!/nLater they moved on/nand destroyed the world./nTry again.";
+        winningText.text = blobSavedCounter + " blobs survived!";
         winningText.gameObject.SetActive(true);
         playAgainButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
