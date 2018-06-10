@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BlobPositionScript : MonoBehaviour {
 
-    public Transform positionParent;
     public List<Transform> positionTransforms;
+
+    public Transform positionParent;
     public Transform currentDestination;
+
+    [SerializeField] private float triggerDistance = 10f;
 
     int currentIndex = 0;
 
@@ -16,20 +19,32 @@ public class BlobPositionScript : MonoBehaviour {
         {
             positionTransforms.Add(child);
         }
-	}
-	
-    public void TriggerNextPosition()
-    {
-        currentDestination = positionTransforms[currentIndex];
-        currentIndex++;
-    }
 
-    private void OnTriggerEnter(Collider other)
+        currentDestination = positionTransforms[0];
+	}
+
+
+    private void Update()
     {
-        if (other.tag == "PositionTrigger")
+        transform.LookAt(positionTransforms[currentIndex]);
+
+        float distanceToNextPoint = Vector3.Distance(transform.localPosition, positionTransforms[currentIndex].localPosition);
+
+
+        if(distanceToNextPoint < triggerDistance)
         {
             TriggerNextPosition();
         }
+    }
+
+    public void TriggerNextPosition()
+    {
+        currentDestination = positionTransforms[currentIndex++];
+    }
+
+    public Vector3 GetCurrentDestination()
+    {
+        return currentDestination.position;
     }
 
 }

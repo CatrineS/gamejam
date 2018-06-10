@@ -9,14 +9,14 @@ public class BlobAgent : MonoBehaviour {
 
     [SerializeField] private Transform[] positions;
     [SerializeField] private Vector3 jumpDirection = new Vector3(0, 1f, 0);
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpForce = 3.5f;
     [SerializeField] private bool jumping = false;
     [SerializeField] private float moveSpeed = 3f;
     private int positionIndex = 0;
     private Rigidbody rb;
     private Animator anim;
     private AudioSource source;
-    public AudioClip running; 
+    public AudioClip running;
 
 
     public enum BlobState { Alive, Dead, InGoal }
@@ -27,24 +27,28 @@ public class BlobAgent : MonoBehaviour {
     public BlobDelegate blobSaved;
     public BlobDelegate blobDied;
 
-    void Start()
-    {
-        anim = GetComponentInChildren<Animator>();
-        source = GetComponent<AudioSource>();
-        source.clip = running; 
-    }
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         state = BlobState.Alive;
     }
 
+    void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+        source = GetComponent<AudioSource>();
+        source.clip = running; 
+
+        
+    }
+
+
+
     void Update() {
 
-        transform.LookAt(positions[positionIndex].position);
         rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
-  
+        transform.LookAt(positions[positionIndex].position);
+
         if (jumping || moveSpeed > 3)
         {
             jumping = false;
@@ -58,8 +62,6 @@ public class BlobAgent : MonoBehaviour {
             anim.Play("Walking");
             source.Play();
         }
-
-
     }
 
     private void JumpTrigger()
