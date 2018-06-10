@@ -68,7 +68,7 @@ public class BlobAgent : MonoBehaviour {
             gameObject.SetActive(false);
         }
         if (other.tag == "WinningTrigger"){
-            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
         }
     }
 

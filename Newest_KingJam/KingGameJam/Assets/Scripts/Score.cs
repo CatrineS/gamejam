@@ -4,12 +4,14 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     public Text scoreText;
-    public Button playAgainButton;
+    public Restarter restartGame;
     private int score;
+
 
     // Use this for initialization
     void Start()
     {
+        restartGame = GetComponent<Restarter>();
         score = GetComponent<CameraFollow>().BlobsSize();
         DisplayScore();
     }
@@ -20,7 +22,7 @@ public class Score : MonoBehaviour {
         score--;
         if (score < 1)
         {
-            playAgainButton.gameObject.SetActive(true);
+            restartGame.lostGame();
 
         }
         DisplayScore();
