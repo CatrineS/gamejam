@@ -10,6 +10,7 @@ TagManager:
   - JumpingPad
   - PositionTrigger
   - DeathZone
+  - WinningTrigger
   layers:
   - Default
   - TransparentFX
