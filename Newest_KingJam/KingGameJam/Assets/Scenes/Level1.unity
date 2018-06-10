@@ -7334,6 +7334,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 23805874652545666, guid: 8a06a19ac3e9778469e6c8421710902d,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 56430fa84c2775a468ab0eb914db56ea, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a06a19ac3e9778469e6c8421710902d, type: 2}
   m_IsPrefabParent: 0
@@ -12991,6 +12996,7 @@ GameObject:
   - component: {fileID: 1748561362}
   - component: {fileID: 1748561364}
   - component: {fileID: 1748561365}
+  - component: {fileID: 1748561366}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13095,6 +13101,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 187236313}
   restartGame: {fileID: 0}
+--- !u!114 &1748561366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748561359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb5c4de190554b4eb924d8eb5b1531a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winningText: {fileID: 1228041908}
+  losingText: {fileID: 1794798536}
+  playAgainButton: {fileID: 54994971}
 --- !u!1001 &1749308539
 Prefab:
   m_ObjectHideFlags: 0
