@@ -18,8 +18,11 @@ public class CameraFollow : MonoBehaviour {
     private bool zoomingIn = false;
     private bool zoomingOut = false;
 
+    private Score scoreSystem;
+
     private void Awake()
     {
+        scoreSystem = GetComponent<Score>();
         foreach(Transform child in BlobParent)
         {
             blobs.Add(child);
@@ -100,6 +103,11 @@ public class CameraFollow : MonoBehaviour {
         else if(blobs.Contains(blob))
         {
             blobs.Remove(blob);
+            scoreSystem.UpdateScore();
         }
+    }
+    public int BlobsSize()
+    {
+        return blobs.Count;
     }
 }
