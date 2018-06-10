@@ -12,12 +12,15 @@ public class BlobAgent : MonoBehaviour
     [SerializeField] private Vector3 jumpDirection = new Vector3(0, 1f, 0);
     [SerializeField] private float jumpForce = 3.5f;
     [SerializeField] private bool jumping = false;
+    private bool hasJumped = false;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private int positionIndex = 0;
     private Rigidbody rb;
     private Animator anim;
     private AudioSource source;
     public AudioClip running;
+
+    private float maxSpeed = 5f;
 
 
 
@@ -43,6 +46,21 @@ public class BlobAgent : MonoBehaviour
         source.clip = running;
     }
 
+    private void FixedUpdate()
+    {
+        //if (rb.velocity.magnitude > maxSpeed && !jumping )
+        //{
+        //    rb.velocity = rb.velocity.normalized * maxSpeed;
+        //}
+
+        if (jumping)
+        {
+           
+          
+        }
+
+        rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
+    }
 
 
     void Update()
@@ -50,15 +68,11 @@ public class BlobAgent : MonoBehaviour
 
         currentDestination = positions[positionIndex];
         transform.LookAt(positions[positionIndex].position);
-        rb.AddRelativeForce(Vector3.forward * moveSpeed, ForceMode.Force);
-
-        
-
-
-        if (jumping || moveSpeed > 3)
+       
+        if (jumping)
         {
-            jumping = false;
             rb.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
+            jumping = false;
             anim.Play("Idle");
             source.Play();
         }
@@ -68,6 +82,12 @@ public class BlobAgent : MonoBehaviour
             anim.Play("Walking");
             source.Play();
         }
+    }
+
+    private void SetJumpWithDelay()
+    {
+        jumping = false;
+        hasJumped = false;
     }
 
     private void JumpTrigger()
