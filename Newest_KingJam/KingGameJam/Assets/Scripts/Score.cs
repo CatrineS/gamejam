@@ -17,6 +17,10 @@ public class Score : MonoBehaviour {
     public void UpdateScore()
     {
         score--;
+        if (score < 1)
+        {
+            SceneChange.instance.reStartScene(); // ska restarta när man klickat på knapp
+        }
         DisplayScore();
     }
 
