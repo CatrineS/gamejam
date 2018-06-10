@@ -9,35 +9,42 @@ public class Restarter : MonoBehaviour {
     public Button playAgainButton;
     private List<Transform> allBlobs;
 
+    private bool gameIsOver = false;
+
     [SerializeField] private int blobSavedCounter = 0;
     [SerializeField] private int blobDiedCounter = 0;
     [SerializeField] private int totalBlobCounter = 0;
   
     private void CheckGameOver()
     {
-        if((blobSavedCounter + blobDiedCounter) == totalBlobCounter)
+        if (gameIsOver)
+            return;   
+        else if ((blobSavedCounter + blobDiedCounter) == totalBlobCounter)
         {
-            if(blobSavedCounter > 0)
+            if (blobSavedCounter > 0)
             {
                 WonGame();
-            }
-            else if(blobSavedCounter == 0)
+            }             
+            else if (blobSavedCounter == 0)
             {
                 LostGame();
-            }
+            }                 
         }
     }
 
-    public void LostGame() {
-
-        playAgainButton.gameObject.SetActive(true);
-        losingText.gameObject.SetActive(true);
-    }
-    public void WonGame()
+    public void LostGame()
     {
         playAgainButton.gameObject.SetActive(true);
+        losingText.gameObject.SetActive(true);
+        gameIsOver = true;
+    }
+
+    public void WonGame()
+    {
         winningText.text = blobSavedCounter + " survived!";
         winningText.gameObject.SetActive(true);
+        playAgainButton.gameObject.SetActive(true);
+        gameIsOver = true;
     }
 
  

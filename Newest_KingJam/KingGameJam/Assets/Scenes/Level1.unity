@@ -12800,11 +12800,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400178, guid: fb235d80a241cb94080aab12163bd612, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0075
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: fb235d80a241cb94080aab12163bd612, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0274
       objectReference: {fileID: 0}
     - target: {fileID: 400178, guid: fb235d80a241cb94080aab12163bd612, type: 3}
       propertyPath: m_LocalPosition.z
