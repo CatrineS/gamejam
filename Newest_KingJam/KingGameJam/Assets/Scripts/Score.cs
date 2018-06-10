@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     public Text scoreText;
+    public Button playAgainButton;
     private int score;
 
     // Use this for initialization
@@ -19,7 +20,8 @@ public class Score : MonoBehaviour {
         score--;
         if (score < 1)
         {
-            SceneChange.instance.reStartScene(); // ska restarta när man klickat på knapp
+            playAgainButton.gameObject.SetActive(true);
+
         }
         DisplayScore();
     }
