@@ -5,32 +5,33 @@ public class Score : MonoBehaviour {
 
     public Text scoreText;
     public Restarter restartGame;
-    private int score;
+    private int blobsAlive;
 
 
     // Use this for initialization
     void Start()
     {
         restartGame = GetComponent<Restarter>();
-        score = GetComponent<CameraFollow>().BlobsSize();
+        blobsAlive = GetComponent<CameraFollow>().BlobsSize();
         DisplayScore();
     }
 
 
     public void UpdateScore()
     {
-        score--;
-        if (score < 1)
-        {
-            restartGame.lostGame();
+        blobsAlive--;
 
+        if (blobsAlive < 1)
+        {
+            restartGame.LostGame();
         }
+
         DisplayScore();
     }
 
     void DisplayScore()
     {
-        scoreText.text = "" + score;
+        scoreText.text = "" + blobsAlive;
     }
 
 
