@@ -52,20 +52,23 @@ public class BlobAgent : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "JumpingPad")
+        if (other.tag == "JumpingPad")
         {
             JumpTrigger();
         }
 
-        if(other.tag == "PositionTrigger")
+        if (other.tag == "PositionTrigger")
         {
             TriggerNextPosition();
         }
-        
-        if(other.tag == "DeathZone")
+
+        if (other.tag == "DeathZone")
         {
             RemoveFromList();
             gameObject.SetActive(false);
+        }
+        if (other.tag == "WinningTrigger"){
+            rb.isKinematic = true;
         }
     }
 

@@ -35,7 +35,7 @@ public class CameraFollow : MonoBehaviour {
             Move();
             Zoom();
         }
-	}
+    }
 
     private void Move()
     {

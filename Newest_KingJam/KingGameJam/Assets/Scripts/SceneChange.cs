@@ -3,9 +3,29 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour {
 
+    public static SceneChange instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void changeScene(int sceneNum)
     {
         SceneManager.LoadScene(sceneNum);
+    }
+    public void reStartScene()
+    {
+        int currentSceneNumber = SceneManager.GetActiveScene().buildIndex;
+        changeScene(currentSceneNumber);
     }
 	
 }
